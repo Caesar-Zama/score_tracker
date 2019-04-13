@@ -1,0 +1,37 @@
+SCORE TRACKER APP
+
+1. IDENTIFY YOUR USER
+
+- Jane and John Doe love to play games and are very competitive. Because of how competitive they
+  are they are usually focused on the game, and sometimes this leads to them forgetting each others
+  score. This creates doubt into who actually won the game.
+
+- They would like a simple tool that keeps track of a game's score for them and displays who won the game.
+
+
+2. IDENTIFY YOUR USER'S CRITICAL GOAL(S)
+
+##### The ability to track score
+  - Able to add points when a player score
+  - Player name is associated w/ a "score"
+  - Awareness of score needed to win game
+
+
+### The ability to view the winner of a game
+  - Winning player is revealed when winning score is reached
+
+# The ability to start a new tracking session
+  - Start a new game, start a new score tracker
+
+# The ability to add a new player to score tracker (new feature I'm adding)
+
+
+3. GIVE USERS A PATH TO THEIR GOAL
+
+- This can all happen on 1 screen
+- No login required
+- User can just jump in and start tracking a game score
+- All things a user needs to do to effectively keep game score can be done on a single screen
+- Everything is intutive, easy, quick === no barriers
+- One click and done
+

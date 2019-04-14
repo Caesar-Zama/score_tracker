@@ -13,12 +13,12 @@
 // ----------------------------------
 // LAYOUT
 // ----------------------------------
-@import 'layout/container',
-        'layout/header';
+@import 'layout/container';
 
 // ----------------------------------
 // MODULES
 // ----------------------------------
-@import 'modules/logo';
+@import 'modules/logo',
+        'modules/nav';
 
 

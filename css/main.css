@@ -367,12 +367,20 @@ a {
   background: #6dd5ed; }
 
 .nav__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: #fff; }
 
 .nav__item i.fa-sliders-h {
-  font-size: 20px; }
+  margin-bottom: 4px;
+  font-size: 1.375rem; }
 
 .nav__item--highlight {
   color: #F9F871; }
+
+.nav__item-subtext {
+  font-size: .625rem; }
 
 /*# sourceMappingURL=main.css.map */

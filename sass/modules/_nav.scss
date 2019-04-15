@@ -10,10 +10,20 @@
   background: $c-primary;
 }
 
-.nav__item {color: #fff;}
-
-.nav__item i.fa-sliders-h {font-size: 20px;}
-
-.nav__item--highlight {
-  color: $c-accent;
+.nav__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
 }
+
+// Set Score Icon
+.nav__item i.fa-sliders-h {
+  margin-bottom: 4px;
+  font-size: 1.375rem;
+}
+
+.nav__item--highlight {color: $c-accent;}
+
+.nav__item-subtext {font-size: .625rem;}

@@ -14,8 +14,20 @@
       <h3 class="logo">Score Keeper</h3>
     </header>
 
-    <main>
-      card
+    <main style="border: 2px solid #000;">
+      <section style="border: 2px solid #00FF00;">
+        <article style="border: 2px solid #ffa500;" class="card">
+          <div class="card__content">
+            <header class="card__header">
+              <p class="card__text">Winning Score <span class="js-winnng-score">03</span></p>
+            </header>
+            <h4 class="card__score">2</h4>
+            <div class="card__divider">
+              Player Name
+            </div> <!-- card__divider -->
+          </div> <!-- card__content -->
+        </article>
+      </section>
     </main>
 
     
@@ -23,18 +35,23 @@
         <ul class="nav">
           <li class="nav__item">
             <a href="#"><ion-icon class="ion-custom--md" name="person-add"></ion-icon></a>
+            <span class="nav__item-subtext">Add User</span>
           </li>
           <li class="nav__item">
-            <a href="#"><i class="fas fa-sliders-h"></i></a>
+            <a href="#"><i class="ion-custom--md fas fa-sliders-h"></i></a>
+            <span class="nav__item-subtext">Set Score</span>
           </li>
           <li class="nav__item--highlight nav__item">
-            <a href="#"><ion-icon class="ion-custom--lg" name="add-circle"></ion-icon></a>
+            <a href="#"><ion-icon class="ion-custom--md" name="add-circle"></ion-icon></a>
+            <span class="nav__item-subtext">Add Point</span>
           </li>
           <li class="nav__item">
             <a href="#"><ion-icon class="ion-custom--md" name="remove"></ion-icon></a>
+            <span class="nav__item-subtext">Subtract Point</span>
           </li>
           <li class="nav__item">
             <a href="#"><ion-icon class="ion-custom--md" name="refresh"></ion-icon></a>
+            <span class="nav__item-subtext">Reset</span>
           </li>  
         </ul>
       </nav>

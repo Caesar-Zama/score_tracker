@@ -353,7 +353,8 @@ a {
   font-weight: 500;
   text-transform: uppercase;
   text-align: center;
-  color: #fff; }
+  letter-spacing: .125rem;
+  color: #F9F871; }
 
 .nav {
   width: 100%;

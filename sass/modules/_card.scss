@@ -1,0 +1,36 @@
+.scorecard {
+  width: 255px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fbfafc; // 0.644
+  border-radius: .975rem;
+}
+
+.scorecard__content {
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
+}
+
+.scorecard__header {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scorecard__text {
+  font-weight: $fw-light;
+  color: $c-accent2;
+}
+
+.scorecard__header,
+.scorecard__divider {
+  // border: 1px solid #000;
+}
+
+
+section {
+  width: 80%;
+  margin: auto;
+}

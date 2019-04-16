@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Ubuntu:500");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:300,500");
 .ion-custom--xs {
   font-size: 8px; }
 
@@ -12,7 +12,7 @@
   font-size: 32px; }
 
 .ion-custom--xlg {
-  font-size: 64px; }
+  font-size: 34px; }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -357,14 +357,14 @@ a {
 
 .nav {
   width: 100%;
-  padding: 15px;
+  padding: 10px;
   position: fixed;
   bottom: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #6dd5ed;
-  background: #6dd5ed; }
+  border: 1px solid #F9F871;
+  background: #F9F871; }
 
 .nav__item {
   display: flex;
@@ -375,12 +375,38 @@ a {
 
 .nav__item i.fa-sliders-h {
   margin: 3px auto;
-  font-size: 1.375rem; }
+  font-size: 1.75rem; }
 
 .nav__item--highlight {
-  color: #F9F871; }
+  color: #8CF6AF; }
 
 .nav__item-subtext {
   font-size: .625rem; }
+
+.scorecard {
+  width: 255px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fbfafc;
+  border-radius: .975rem; }
+
+.scorecard__content {
+  padding-left: 1.3rem;
+  padding-right: 1.3rem; }
+
+.scorecard__header {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.scorecard__text {
+  font-weight: 300;
+  color: #8CF6AF; }
+
+section {
+  width: 80%;
+  margin: auto; }
 
 /*# sourceMappingURL=main.css.map */

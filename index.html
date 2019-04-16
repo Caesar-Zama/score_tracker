@@ -14,16 +14,17 @@
       <h3 class="logo">Score Keeper</h3>
     </header>
 
-    <main style="border: 2px solid #000;">
-      <section style="border: 2px solid #00FF00;">
-        <article style="border: 2px solid #ffa500;" class="card">
-          <div class="card__content">
-            <header class="card__header">
-              <p class="card__text">Winning Score <span class="js-winnng-score">03</span></p>
+    <main>
+      <section>
+        <article class="scorecard">
+          <div class="scorecard__content">
+            <header class="scorecard__header">
+              <p class="scorecard__text">Winning Score</p>
+              <span class="scorecard__text js-winnng-score">03</span>
             </header>
-            <h4 class="card__score">2</h4>
-            <div class="card__divider">
-              Player Name
+            <h4 class="scorecard__score">2</h4>
+            <div class="scorecard__divider">
+              <input type="text">
             </div> <!-- card__divider -->
           </div> <!-- card__content -->
         </article>
@@ -33,23 +34,23 @@
     <nav>
       <ul class="nav">
         <li class="nav__item">
-          <a href="#"><ion-icon class="ion-custom--md" name="person-add"></ion-icon></a>
+          <a href="#"><ion-icon class="ion-custom--lg" name="person-add"></ion-icon></a>
           <span class="nav__item-subtext">Add Player</span>
         </li>
         <li class="nav__item">
-          <a href="#"><i class="ion-custom--md fas fa-sliders-h"></i></a>
+          <a href="#"><i class="ion-custom--lg fas fa-sliders-h"></i></a>
           <span class="nav__item-subtext">Set Score</span>
         </li>
         <li class="nav__item--highlight nav__item">
-          <a href="#"><ion-icon class="ion-custom--md" name="add-circle"></ion-icon></a>
+          <a href="#"><ion-icon class="ion-custom--xlg" name="add-circle"></ion-icon></a>
           <span class="nav__item-subtext">Add</span>
         </li>
         <li class="nav__item">
-          <a href="#"><ion-icon class="ion-custom--md" name="remove"></ion-icon></a>
+          <a href="#"><ion-icon class="ion-custom--lg" name="remove"></ion-icon></a>
           <span class="nav__item-subtext">Subtract</span>
         </li>
         <li class="nav__item">
-          <a href="#"><ion-icon class="ion-custom--md" name="refresh"></ion-icon></a>
+          <a href="#"><ion-icon class="ion-custom--lg" name="refresh"></ion-icon></a>
           <span class="nav__item-subtext">Reset</span>
         </li>  
       </ul>

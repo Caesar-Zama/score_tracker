@@ -344,6 +344,9 @@ li {
 a {
   color: inherit; }
 
+input {
+  max-width: 100%; }
+
 .container {
   padding-left: 5%;
   padding-right: 5%; }
@@ -358,7 +361,7 @@ a {
 
 .nav {
   width: 100%;
-  padding: 8px;
+  padding: 8px .625rem;
   position: fixed;
   bottom: 0;
   display: flex;
@@ -405,6 +408,21 @@ a {
 .scorecard__text {
   font-weight: 300;
   color: #8CF6AF; }
+
+.scorecard__score-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.scorecard__score {
+  margin: 0 auto;
+  font-size: 12rem;
+  font-weight: 300;
+  text-align: center;
+  color: #333; }
+
+.scorecard__divider {
+  border: 0.8px solid #8CF6AF; }
 
 section {
   width: 80%;

@@ -3,7 +3,7 @@
   height: 350px;
   display: flex;
   flex-direction: column;
-  background-color: #fbfafc; // 0.644
+  background-color: $c-white--alt; // 0.644
   border-radius: .975rem;
 }
 
@@ -24,11 +24,21 @@
   color: $c-accent2;
 }
 
-.scorecard__header,
-.scorecard__divider {
-  // border: 1px solid #000;
+.scorecard__score-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.scorecard__score {
+  margin: 0 auto;
+  font-size: 12rem;
+  font-weight: $fw-light;
+  text-align: center;
+  color: #333;
+}
+
+.scorecard__divider {border: .8px solid $c-accent2;}
 
 section {
   width: 80%;

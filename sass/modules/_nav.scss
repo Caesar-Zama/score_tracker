@@ -1,10 +1,10 @@
 .nav {
   width: 100%;
-  padding: 10px;
+  padding: 8px;
   position: fixed;
   bottom: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   border: 1px solid $c-accent;
   background: $c-accent;
@@ -21,7 +21,7 @@
 // Set Score Icon
 .nav__item i.fa-sliders-h {
   margin: 3px auto;
-  font-size: 1.75rem;
+  font-size: 1.275rem;
 }
 
 .nav__item--highlight {color: $c-accent2;}

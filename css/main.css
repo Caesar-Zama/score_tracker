@@ -346,6 +346,8 @@ a {
 
 input {
   max-width: 100%; }
+  input::placeholder {
+    font-family: sans-serif; }
 
 .container {
   padding-left: 5%;
@@ -423,6 +425,13 @@ input {
 
 .scorecard__divider {
   border: 0.8px solid #8CF6AF; }
+
+.scorecard__player {
+  margin-top: 2px;
+  padding: .5rem .6rem;
+  outline-color: #F9F871;
+  border: 1px solid #ccc;
+  border-radius: 4px; }
 
 section {
   width: 80%;

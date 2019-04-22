@@ -1,0 +1,14 @@
+main {
+  min-width: 100%;
+  height: 77%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrolling--wrapper {
+  min-width: 100%;
+  display: flex;
+  overflow-x: auto;
+}
+

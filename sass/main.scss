@@ -16,7 +16,8 @@
 // LAYOUT
 // ----------------------------------s
 
-@import 'layout/container';
+@import 'layout/container',
+        'layout/main';
 
 // ----------------------------------
 // MODULES
@@ -24,6 +25,6 @@
 
 @import 'modules/logo',
         'modules/nav',
-        'modules/card';
+        'modules/scorecard';
 
 

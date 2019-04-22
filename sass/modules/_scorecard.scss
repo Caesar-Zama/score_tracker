@@ -1,4 +1,5 @@
 .scorecard {
+  margin: 5px;
   width: 255px;
   height: 350px;
   display: flex;
@@ -42,13 +43,8 @@
 
 .scorecard__player {
   margin-top: 2px;
-  padding: .5rem .6rem;
+  padding: .6rem;
   outline-color: $c-accent;
   border: 1px solid #ccc;
   border-radius: 4px; 
-}
-
-section {
-  width: 80%;
-  margin: auto;
 }

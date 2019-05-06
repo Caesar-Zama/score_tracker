@@ -1,0 +1,26 @@
+.slider-container {width: 100%;}
+
+.slider {
+  width: 100%;
+  height: 2px;
+  outline: none;
+  opacity: 0.8;
+  background: #ffffff;
+  transition: opacity .2s;
+  -webkit-appearance: none; /* Override default style */
+     -moz-appearance: none;
+          appearance: none;
+  &:hover {opacity: 1;} /* Mouse-over effect */
+}
+
+// Slider Handle (Chrome, Opera, Safari, Edge, Firefox)
+.slider::-webkit-slider-thumb {
+  @include slider-override;
+  -webkit-appearance: none;
+          appearance: none;
+}
+.slider::-moz-range-thumb {
+  @include slider-override;
+  -moz-appearance: none;
+       appearance: none;
+}

@@ -7,3 +7,15 @@
 .ion-custom--md {font-size: 24px;}
 .ion-custom--lg {font-size: 32px;}
 .ion-custom--xlg {font-size: 34px;}
+
+// ----------------------------------------
+// Mixins
+// ----------------------------------------
+
+@mixin slider-override {
+  width: 15px;
+  height: 15px;
+  background: $c-accent;
+  border-radius: 50%;
+  cursor: pointer;
+}

@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,500');
+// @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,500');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
 
 
 html {
@@ -30,8 +32,6 @@ a {color: inherit;}
 
 input {
   max-width: 100%;
-  &::placeholder {
-    font-family: sans-serif;
-  }
+  &::placeholder {font-family: sans-serif;}
 }
 

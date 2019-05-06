@@ -20,10 +20,10 @@
         <div class="scorecard__content">
           <header class="scorecard__header">
             <p class="scorecard__text">Winning Score</p>
-            <span class="scorecard__text js-winnng-score">03</span>
+            <span class="scorecard__text">03</span>
           </header>
           <div class="scorecard__score-container">
-            <h4 class="scorecard__score">2</h4>
+            <h4 class="js-p1-score scorecard__score">2</h4>
           </div>
           <hr class="scorecard__divider"> 
           <input class="scorecard__player" type="text" placeholder="Enter Player Name"> 
@@ -35,10 +35,10 @@
         <div class="scorecard__content">
           <header class="scorecard__header">
             <p class="scorecard__text">Winning Score</p>
-            <span class="scorecard__text js-winnng-score">03</span>
+            <span class="scorecard__text">03</span>
           </header>
           <div class="scorecard__score-container">
-            <h4 class="scorecard__score">1</h4>
+            <h4 class="js-p2-score scorecard__score">1</h4>
           </div>
           <hr class="scorecard__divider"> 
           <input class="scorecard__player" type="text" placeholder="Enter Player Name"> 
@@ -46,6 +46,21 @@
       </article> <!-- scorecard -->
     </section> <!-- scrolling--wrapper -->
   </main>
+
+<!-- Modal Section -->
+  <div id="set-score" class="modal">
+    <div class="modal__content">
+      <span class="modal__exit">&times;</span>
+      <div class="modal__content-inner">
+        <h3 class="modal__title">Playing To:</h3>
+        <div class="slider-container">
+          <input type="range" min="0" max="100" class="slider">
+        </div>
+      </div>
+    </div> <!-- modal-content -->   
+  </div> <!-- modal -->  
+
+
 
   <nav>
     <ul class="nav">

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Ubuntu:300,500");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
 .ion-custom--xs {
   font-size: 8px; }
 
@@ -329,7 +329,7 @@ html {
 
 body {
   height: 100vh;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   background: linear-gradient(to right, #6dd5ed, #63EECF);
   overflow: hidden; }
@@ -365,9 +365,12 @@ main {
   display: flex;
   overflow-x: auto; }
 
+.scrolling--wrapper::-webkit-scrollbar {
+  display: none; }
+
 .logo {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: .125rem;
@@ -445,5 +448,78 @@ main {
   outline-color: #F9F871;
   border: 1px solid #ccc;
   border-radius: 4px; }
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: auto;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.5);
+  overflow: auto;
+  display: flex;
+  align-items: center; }
+
+.modal__content {
+  margin: 15% auto;
+  padding: 1rem;
+  width: 80%;
+  height: 312px;
+  text-align: center;
+  background-color: #63EECF;
+  border-radius: 3px;
+  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2); }
+
+.modal__content-inner {
+  margin-top: 3.75rem; }
+
+.modal__exit {
+  float: right;
+  font-size: 1.475rem;
+  font-weight: 300;
+  cursor: pointer; }
+
+.modal__title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: .125rem; }
+
+.slider-container {
+  width: 100%; }
+
+.slider {
+  width: 100%;
+  height: 2px;
+  outline: none;
+  opacity: 0.8;
+  background: #ffffff;
+  transition: opacity .2s;
+  -webkit-appearance: none;
+  /* Override default style */
+  -moz-appearance: none;
+  appearance: none;
+  /* Mouse-over effect */ }
+  .slider:hover {
+    opacity: 1; }
+
+.slider::-webkit-slider-thumb {
+  width: 15px;
+  height: 15px;
+  background: #F9F871;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none; }
+
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #F9F871;
+  border-radius: 50%;
+  cursor: pointer;
+  -moz-appearance: none;
+  appearance: none; }
 
 /*# sourceMappingURL=main.css.map */

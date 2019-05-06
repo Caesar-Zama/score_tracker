@@ -6,9 +6,12 @@ main {
   align-items: center;
 }
 
+// Horizontal Scrolling Effect
 .scrolling--wrapper {
   min-width: 100%;
   display: flex;
   overflow-x: auto;
 }
 
+// Hiding Scrollbar
+.scrolling--wrapper::-webkit-scrollbar {display: none;}

@@ -26,4 +26,7 @@
 
 .nav__item--highlight {color: $c-accent2;}
 
-.nav__item-subtext {font-size: .625rem;}
+.nav__item-subtext {
+  font-size: .625rem;
+  cursor: pointer;
+}

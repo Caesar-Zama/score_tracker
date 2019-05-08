@@ -402,7 +402,8 @@ main {
   color: #8CF6AF; }
 
 .nav__item-subtext {
-  font-size: .625rem; }
+  font-size: .625rem;
+  cursor: pointer; }
 
 .scorecard {
   margin: 5px;
@@ -460,7 +461,10 @@ main {
   background-color: rgba(128, 128, 128, 0.5);
   overflow: auto;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s ease-in; }
 
 .modal__content {
   margin: 15% auto;
@@ -473,7 +477,7 @@ main {
   box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2); }
 
 .modal__content-inner {
-  margin-top: 3.75rem; }
+  margin-top: 4.75rem; }
 
 .modal__exit {
   float: right;

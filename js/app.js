@@ -1,21 +1,20 @@
-const scoreTracker = () {
-  const playerOne = document.querySelector('.js-p1-score');
-  const playerTwo = document.querySelector('.js-p2-score');
-  const scoreToWin = document.querySelectorAll('span.scorecard__text');
+const scoreTracker = () => {
+  const scoreSetting = () => {
+    const modal_setScore = document.querySelector('#set-score');
+    const modalExit = document.querySelector('.modal__exit');
+    const scoreToWin = document.querySelector('.score');
+    const setScoreBtn = document.querySelector('#winning-score');
 
-  const setScore = document.querySelector('.fa-sliders-h');
 
+    setScoreBtn.addEventListener('click', function() {
+      modal_setScore.style.opacity = 1;
+      modal_setScore.style.pointerEvents = 'auto';
 
-  // Set Score to win
-
-  // - user presses set score icon
-  // - a slider appears allowing them to set score needed to win
-  // "Winning Score" changes to score needed to win
-
-  setScore.addEventListener('click', function() {
-    // - a slider appears allowing them to set score needed to win
-    // "Winning Score" changes to score needed to win
-  });
+    });
+  }
+  
+  scoreSetting();
 }
 
 scoreTracker();
+ 

@@ -477,9 +477,9 @@ main {
 .modal__content {
   position: relative;
   margin: 15% auto;
-  padding: 1rem;
-  width: 80%;
-  height: 312px;
+  padding: .5rem 1rem 1rem 1rem;
+  width: 85%;
+  height: 70%;
   text-align: center;
   background-color: #63EECF;
   border-radius: 3px;
@@ -491,7 +491,7 @@ main {
 
 .modal__exit {
   float: right;
-  font-size: 1.475rem;
+  font-size: 2rem;
   font-weight: 300;
   cursor: pointer; }
 

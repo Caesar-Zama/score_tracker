@@ -17,9 +17,9 @@
 .modal__content {
   position: relative;
   margin: 15% auto;
-  padding: 1rem;
-  width: 80%;
-  height: 312px; // max-height: 55%;
+  padding: .5rem 1rem 1rem 1rem;
+  width: 85%;
+  height: 70%; // max-height: 55% 312px;
   text-align: center;
   background-color: $c-secondary;
   border-radius: 3px;
@@ -30,7 +30,7 @@
 
 .modal__exit {
   float: right;
-  font-size: 1.475rem;
+  font-size: 2rem;
   font-weight: $fw-light;
   cursor: pointer;
 }

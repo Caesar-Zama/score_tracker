@@ -1,17 +1,28 @@
 const scoreTracker = () => {
   const scoreSetting = () => {
-    const modal_setScore = document.querySelector('#set-score');
+    const scoreAdjusterModal = document.querySelector('#set-score');
     const modalExit = document.querySelector('.modal__exit');
-    const scoreToWin = document.querySelector('.score');
     const setScoreBtn = document.querySelector('#winning-score');
+    const scoreToWin = document.querySelector('.score');
+    const rangeSlider = document.querySelector('.slider');
 
+
+    scoreAdjusterModal.addEventListener('click', (e) => {
+      if (e.target.id === "set-score") {
+        scoreAdjusterModal.style.display = 'none';
+      }
+    });
 
     setScoreBtn.addEventListener('click', () => {
-      modal_setScore.style.display = 'flex';
+      scoreAdjusterModal.style.display = 'flex';
     });
 
     modalExit.addEventListener('click', () => {
-      modal_setScore.style.display = 'none';
+      scoreAdjusterModal.style.display = 'none';
+    });
+
+    rangeSlider.addEventListener('change', () => {
+      scoreToWin.textContent = rangeSlider.value;
     });
   }
   

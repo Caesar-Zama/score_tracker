@@ -9,15 +9,13 @@
   height: 90vh;
   background-color: rgba($color: #808080, $alpha: .5);
   overflow: auto;
-  display: flex;
+  display: none;
   align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .35s ease-in;
 }
 
 // Modal Content Box
 .modal__content {
+  position: relative;
   margin: 15% auto;
   padding: 1rem;
   width: 80%;
@@ -26,6 +24,7 @@
   background-color: $c-secondary;
   border-radius: 3px;
   box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.2);
+  animation: animatebottom .2s;
 }
 .modal__content-inner {margin-top: 4.75rem;}
 

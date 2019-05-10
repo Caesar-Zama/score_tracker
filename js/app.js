@@ -6,10 +6,12 @@ const scoreTracker = () => {
     const setScoreBtn = document.querySelector('#winning-score');
 
 
-    setScoreBtn.addEventListener('click', function() {
-      modal_setScore.style.opacity = 1;
-      modal_setScore.style.pointerEvents = 'auto';
+    setScoreBtn.addEventListener('click', () => {
+      modal_setScore.style.display = 'flex';
+    });
 
+    modalExit.addEventListener('click', () => {
+      modal_setScore.style.display = 'none';
     });
   }
   

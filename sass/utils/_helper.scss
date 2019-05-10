@@ -20,3 +20,18 @@
   outline: none;
   cursor: pointer;
 }
+
+// ----------------------------------------
+// Keyframes
+// ----------------------------------------
+
+/* Modal appears rising from beneath navigation */
+@keyframes animatebottom {
+  from {bottom: -412px;}
+  to {bottom: 0;}
+}
+
+@keyframes animatebottom--reverse {
+  from {bottom: 0;}
+  to {bottom: -412px;}
+}

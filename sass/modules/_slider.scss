@@ -18,9 +18,11 @@
   @include slider-override;
   -webkit-appearance: none;
           appearance: none;
+  &:hover {transform: scale(1.5);}
 }
 .slider::-moz-range-thumb {
   @include slider-override;
   -moz-appearance: none;
        appearance: none;
+  &:hover {transform: scale(1.5);}  
 }

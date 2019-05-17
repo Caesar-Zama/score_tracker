@@ -15,9 +15,10 @@
 @mixin slider-override {
   width: 15px;
   height: 15px;
-  background: $c-accent;
+  background: $c-accent2;
   border-radius: 50%;
   outline: none;
+  transition: transform .2s ease;
   cursor: pointer;
 }
 

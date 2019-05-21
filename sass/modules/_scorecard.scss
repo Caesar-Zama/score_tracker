@@ -1,14 +1,10 @@
 .scorecard {
   margin: 5px;
-  min-width: 255px;
+  min-width: 240px;
   display: flex;
+  justify-content: center;
   background-color: $c-white--alt; 
   border-radius: .975rem;
-}
-
-.scorecard__content {
-  padding-left: 1.3rem;
-  padding-right: 1.3rem;
 }
 
 .scorecard__header {
@@ -23,12 +19,6 @@
   color: $c-accent2;
 }
 
-.scorecard__score-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .scorecard__score {
   margin: 0 auto;
   font-size: 12rem;
@@ -40,10 +30,9 @@
 .scorecard__divider {border: .05rem solid $c-accent2;}
 
 .scorecard__player {
-  margin-top: 2px;
-  margin-bottom: 12px;
+  margin: 2px auto 12px auto;
   padding: .6rem;
   outline-color: $c-accent;
   border: 1px solid #ccc;
-  border-radius: 4px; 
+  border-radius: 4px;
 }

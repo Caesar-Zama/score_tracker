@@ -11,15 +11,17 @@ const scoreTracker = _ => {
   
   // Identify and Apply proper animation for clicked nav button
   const checkNavBtn = (event) => {
-    const navBtn = event.target.attributes.name.value;
+    const navBtn = event.target.classList[0];
+    console.log(navBtn);
     
-    if (navBtn === 'person-add') {
+
+    if (navBtn === 'js-player-add') {
       // newPlayer();
-    } else if (navBtn === 'slider') {
+    } else if (navBtn === 'js-slider') {
       adjustScore();
-    } else if (navBtn === 'add-circle') {
+    } else if (navBtn === 'js-add') {
       add();
-    } else if (navBtn === 'remove') {
+    } else if (navBtn === 'js-reset') {
       // subtract()
     } else { // 'refresh'
       // reset();

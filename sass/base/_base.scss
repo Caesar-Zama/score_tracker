@@ -18,6 +18,7 @@ body {
   height: 100vh;
   font-family: $ff-primary;
   background: linear-gradient(to right, $c-primary, $c-secondary);
+  overflow: hidden;
 }
 
 ul {

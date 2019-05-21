@@ -337,7 +337,8 @@ html {
 body {
   height: 100vh;
   font-family: "Roboto", sans-serif;
-  background: linear-gradient(to right, #6dd5ed, #63EECF); }
+  background: linear-gradient(to right, #6dd5ed, #63EECF);
+  overflow: hidden; }
 
 ul {
   margin: 0;
@@ -368,7 +369,7 @@ main {
 
 .scrolling--wrapper {
   min-width: 100%;
-  display: flex;
+  white-space: nowrap;
   overflow: auto; }
 
 .scrolling--wrapper::-webkit-scrollbar {
@@ -414,10 +415,12 @@ main {
 .scorecard {
   margin: 5px;
   min-width: 240px;
-  display: flex;
-  justify-content: center;
+  display: inline-block;
   background-color: #fbfafc;
   border-radius: .975rem; }
+  .scorecard-inner {
+    display: flex;
+    justify-content: center; }
 
 .scorecard__header {
   margin-top: 8px;
@@ -430,7 +433,7 @@ main {
   color: #8CF6AF; }
 
 .scorecard__score {
-  margin: 0 auto;
+  margin: 0;
   font-size: 12rem;
   font-weight: 300;
   text-align: center;

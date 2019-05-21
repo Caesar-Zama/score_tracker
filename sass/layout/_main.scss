@@ -10,7 +10,7 @@ main {
 // Horizontal Scrolling Effect
 .scrolling--wrapper {
   min-width: 100%;
-  display: flex;
+  white-space: nowrap;
   overflow: auto;
 }
 

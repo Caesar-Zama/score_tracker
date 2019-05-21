@@ -1,9 +1,7 @@
 .scorecard {
   margin: 5px;
-  width: 255px;
-  height: 350px;
+  min-width: 255px;
   display: flex;
-  flex-direction: column;
   background-color: $c-white--alt; 
   border-radius: .975rem;
 }
@@ -39,10 +37,11 @@
   color: #333;
 }
 
-.scorecard__divider {border: .8px solid $c-accent2;}
+.scorecard__divider {border: .05rem solid $c-accent2;}
 
 .scorecard__player {
   margin-top: 2px;
+  margin-bottom: 12px;
   padding: .6rem;
   outline-color: $c-accent;
   border: 1px solid #ccc;

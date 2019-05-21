@@ -1,3 +1,11 @@
+// It should be able to add a point to player card ()
+// It should be able to add a new player card ()
+// It should be able to remove a player card ()
+// It should be able to subtract a score from player card ()
+// It should be able to display player name on card ()
+// It should be able to restart tracker ()
+// IT should be able to set a game score (x)
+
 const scoreTracker = _ => {
   const nav = document.querySelector('.nav');
   
@@ -10,7 +18,7 @@ const scoreTracker = _ => {
     } else if (navBtn === 'slider') {
       adjustScore();
     } else if (navBtn === 'add-circle') {
-      // add()
+      add();
     } else if (navBtn === 'remove') {
       // subtract()
     } else { // 'refresh'
@@ -18,7 +26,7 @@ const scoreTracker = _ => {
     }
   }
   
-  // adjustScore Modal
+  // IT should be able to set a game score
   const adjustScore = () => {
     const adjustScoreModal = document.querySelector('#adjust-score');
     const modalContent = document.querySelector('.modal__content');
@@ -53,9 +61,24 @@ const scoreTracker = _ => {
         } else {
           scorecard.textContent = playingTo.textContent;
         }
-      });
+      })
     });
   }
+
+  // Add Point To Scorecard
+  const add = () => {
+    // On the card that is currently visible
+      // User clicks "add" button
+        // a point is added to card 
+    
+  }
+
+
+
+
+
+
+
 
   // Add Event Listener to each nav button
   nav.addEventListener('click', checkNavBtn);

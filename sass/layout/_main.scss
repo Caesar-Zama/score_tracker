@@ -1,6 +1,7 @@
 main {
+  margin-top: 30px;
   min-width: 100%;
-  height: 77%;
+  height: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +11,7 @@ main {
 .scrolling--wrapper {
   min-width: 100%;
   display: flex;
-  overflow-x: auto;
+  overflow: auto;
 }
 
 // Hiding Scrollbar

@@ -5,6 +5,7 @@
 
 html {
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 *, 
@@ -16,9 +17,7 @@ html {
 body {
   height: 100vh;
   font-family: $ff-primary;
-  font-size: 16px;
   background: linear-gradient(to right, $c-primary, $c-secondary);
-  overflow: hidden;
 }
 
 ul {

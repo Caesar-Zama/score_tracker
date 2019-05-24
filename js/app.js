@@ -1,5 +1,5 @@
 // It should be able to add a point to player card ()
-// It should be able to add a new player card ()
+// It should be able to add a new player card (x)
 // It should be able to remove a player card ()
 // It should be able to subtract a score from player card ()
 // It should be able to display player name on card ()
@@ -8,6 +8,10 @@
 
 const scoreTracker = _ => {
   const nav = document.querySelector('.nav');
+  
+  // Default score for scorecards
+  let scoreCardScore = 0; 
+
   
   // Identify and Apply proper animation for clicked nav button
   const checkNavBtn = (event) => {
@@ -67,17 +71,36 @@ const scoreTracker = _ => {
     });
   }
 
-  // Add Point To Scorecard
-  const add = () => {
-    // On the card that is currently visible
-      // User clicks "add" button
-        // a point is added to card 
+  // Determines which player card is entirely visible inside viewport
+  const inView = () => {
+    const scorecards = document.querySelectorAll('.scorecard');
+    let playerCard;
+
+    // Finds which scorecard is in view
+    const visibleCard = scorecard => {
+      // Get scorecard bounding (position in viewport)
+      const scorecardPos = scorecard.getBoundingClientRect();
+
+      // Check if scorecard is inside viewport on each side
+      if (scorecardPos.left > 0 && scorecardPos.right < window.innerWidth) {
+        playerCard = scorecard;
+      } 
+    }
+    scorecards.forEach(visibleCard);
     
+    return playerCard;
   }
 
 
-
-
+  // Add Point To Scorecard
+  const add = () => {
+    // Currently visible player card
+    const playerCard = inView();
+    const playerScore = playerCard.querySelector('.scorecard__score');
+    
+    // Add point to current scorecard
+    playerScore.textContent = Number(playerScore.textContent) + 1;
+  }
 
 
 
@@ -87,3 +110,26 @@ const scoreTracker = _ => {
 }
 
 scoreTracker();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,5 +1,5 @@
-// It should be able to add a point to player card ()
-// It should be able to add a new player card (x)
+// It should be able to add a point to player card (x)
+// It should be able to add a new player card ()
 // It should be able to remove a player card ()
 // It should be able to subtract a score from player card ()
 // It should be able to display player name on card ()
@@ -8,30 +8,45 @@
 
 const scoreTracker = _ => {
   const nav = document.querySelector('.nav');
-  
-  // Default score for scorecards
-  let scoreCardScore = 0; 
 
-  
-  // Identify and Apply proper animation for clicked nav button
-  const checkNavBtn = (event) => {
-    const navBtn = event.target.classList[0];
-    console.log(navBtn);
-    
+  // Determines which player card is entirely visible inside viewport
+  const inView = () => {
+    const scorecards = document.querySelectorAll('.scorecard');
+    let playerCard;
 
-    if (navBtn === 'js-player-add') {
-      // newPlayer();
-    } else if (navBtn === 'js-slider') {
-      adjustScore();
-    } else if (navBtn === 'js-add') {
-      add();
-    } else if (navBtn === 'js-reset') {
-      // subtract()
-    } else { // 'refresh'
-      // reset();
+    // Finds which scorecard is in view
+    const visibleCard = scorecard => {
+      // Get scorecard bounding (position in viewport)
+      const scorecardPos = scorecard.getBoundingClientRect();
+
+      // Check if scorecard is inside viewport on each side
+      if (scorecardPos.left > 0 && scorecardPos.right < window.innerWidth) {
+        playerCard = scorecard; 
+      }
     }
+    scorecards.forEach(visibleCard);
+    
+    return playerCard;
   }
-  
+
+  // Detect when user stops scrolling
+  const scrollStop = (customFunc) => {
+    const cards = document.querySelector('.scrolling--wrapper');
+    let isScrolling; // scrolling variable
+    
+    // Make sure custom function is actually a function
+    if (!customFunc || typeof customFunc !== 'function') return;
+
+    // Listen for scroll events
+    cards.addEventListener('scroll', () => {      
+      //  when a user scrolls, remove any timeouts on the variable isScrolling
+      window.clearTimeout(isScrolling);
+
+      // set a timeout to run after scroll event ends
+      isScrolling = setTimeout(_ =>  {customFunc();}, 390);
+    });
+  };
+
   // IT should be able to set a game score
   const adjustScore = () => {
     const adjustScoreModal = document.querySelector('#adjust-score');
@@ -71,27 +86,6 @@ const scoreTracker = _ => {
     });
   }
 
-  // Determines which player card is entirely visible inside viewport
-  const inView = () => {
-    const scorecards = document.querySelectorAll('.scorecard');
-    let playerCard;
-
-    // Finds which scorecard is in view
-    const visibleCard = scorecard => {
-      // Get scorecard bounding (position in viewport)
-      const scorecardPos = scorecard.getBoundingClientRect();
-
-      // Check if scorecard is inside viewport on each side
-      if (scorecardPos.left > 0 && scorecardPos.right < window.innerWidth) {
-        playerCard = scorecard;
-      } 
-    }
-    scorecards.forEach(visibleCard);
-    
-    return playerCard;
-  }
-
-
   // Add Point To Scorecard
   const add = () => {
     // Currently visible player card
@@ -102,34 +96,41 @@ const scoreTracker = _ => {
     playerScore.textContent = Number(playerScore.textContent) + 1;
   }
 
+  // Identify and Apply proper animation for clicked nav button
+  const checkNavBtn = (event) => {
+    const navBtn = event.target.classList[0];
+    // Determine which nav button was clicked
+    if (navBtn === 'js-player-add') {
+      // newPlayer();
+    } else if (navBtn === 'js-slider') {
+      adjustScore();
+    } else if (navBtn === 'js-add') {
+      add();
+    } else if (navBtn === 'js-reset') {
+      // subtract()
+    } else { // 'refresh'
+      // reset();
+    }
+  }
+   
+  const setCardName = _ => { 
+    const card = inView();
+    const playerName = card.querySelector('.scorecard__player');
+    
+    playerName.addEventListener('change', _ => {
+      const h5 = document.createElement('h5');
+      const name = document.createTextNode(playerName.value);
+      h5.appendChild(name);
 
+      // Player name pops up on scorecard
+      const parent = playerName.parentNode;
+      parent.replaceChild(h5, playerName);
+    });
+  }
 
-
-  // Add Event Listener to each nav button
+  setCardName();
+  scrollStop(setCardName);
   nav.addEventListener('click', checkNavBtn);
 }
 
 scoreTracker();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

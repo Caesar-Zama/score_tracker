@@ -14,29 +14,27 @@
   </header>
 
   <main>
+    <!-- Player Cards -->
     <section class="scrolling--wrapper">
       <!-- Player 1 Card -->
       <article class="scorecard">
-        <div class="scorecard-inner">
-          <div class="scorecard__content">
-            <header class="scorecard__header">
-              <p class="scorecard__text">Winning Score</p>
-              <span class="scorecard__text">00</span>
-            </header>
-            <div class="scorecard__score-container">
-              <h4 class="scorecard__score">0</h4>
-            </div>
-            <footer>
-              <hr class="scorecard__divider"> 
-              <input class="scorecard__player" type="text" placeholder="Enter Player Name"> 
-            </footer>
-          </div> <!-- scorecard__content -->
-        </div> <!-- scorecard-inner -->
+        <div class="scorecard__content">
+          <header class="scorecard__header">
+            <p class="scorecard__text">Winning Score</p>
+            <span class="scorecard__text">00</span>
+          </header>
+          <div class="scorecard__score-container">
+            <h4 class="scorecard__score">0</h4>
+          </div>
+          <footer>
+            <hr class="scorecard__divider"> 
+            <input class="scorecard__player-field" type="text" placeholder="Enter Player Name">
+          </footer>
+        </div> <!-- scorecard__content -->
       </article> <!-- scorecard -->
 
       <!-- Player 2 Card -->
       <article class="scorecard">
-          <div class="scorecard-inner">
         <div class="scorecard__content">
           <header class="scorecard__header">
             <p class="scorecard__text">Winning Score</p>
@@ -46,9 +44,8 @@
             <h4 class="scorecard__score">0</h4>
           </div>
           <hr class="scorecard__divider"> 
-          <input class="scorecard__player" type="text" placeholder="Enter Player Name"> 
+          <input class="scorecard__player-field" type="text" placeholder="Enter Player Name"> 
         </div> <!-- scorecard__content -->
-        </div>
       </article> <!-- scorecard -->
     </section> <!-- scrolling--wrapper -->
   </main>
@@ -66,7 +63,7 @@
     </div> <!-- modal-content -->   
   </div> <!-- modal -->  
 
-
+  <!-- Bottom Navigation -->
   <nav>
     <ul class="nav">
       <li id="player-plus" class="nav__item">

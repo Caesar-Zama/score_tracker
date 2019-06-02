@@ -4,9 +4,10 @@
   display: inline-block;
   background-color: $c-white--alt; 
   border-radius: .975rem;
-  &-inner {
-    display: flex;
-    justify-content: center;
+  
+  &__content {
+    padding-left: 4%;
+    padding-right: 4%;
   }
 }
 
@@ -32,10 +33,20 @@
 
 .scorecard__divider {border: .05rem solid $c-accent2;}
 
-.scorecard__player {
+.scorecard__player-field {
   margin: 2px auto 12px auto;
   padding: .6rem;
   outline-color: $c-accent;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+.scorecard__player {
+  margin: 1rem auto;
+  font-size: 1.25rem;
+  font-weight: $fw-medium;
+  text-align: center;
+  text-transform: capitalize;
+  color: #333;
+}
+

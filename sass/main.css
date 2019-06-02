@@ -525,17 +525,8 @@ main {
   margin: 5px;
   min-width: 240px;
   display: inline-block;
-  background-color: #fbfafc;
+  background-color: red;
   border-radius: .975rem;
-}
-
-.scorecard-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .scorecard__header {

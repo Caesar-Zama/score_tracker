@@ -2,7 +2,7 @@
 // It should be able to add a new player card ()
 // It should be able to remove a player card ()
 // It should be able to subtract a score from player card ()
-// It should be able to display player name on card ()
+// It should be able to display player name on card (x)
 // It should be able to restart tracker ()
 // IT should be able to set a game score (x)
 
@@ -50,7 +50,6 @@ const scoreTracker = _ => {
   // IT should be able to set a game score
   const adjustScore = () => {
     const adjustScoreModal = document.querySelector('#adjust-score');
-    const modalContent = document.querySelector('.modal__content');
     const modalExit = document.querySelector('.modal__exit');
     const rangeSlider = document.querySelector('.slider');
     const playingTo = document.querySelector('.score');
@@ -115,11 +114,12 @@ const scoreTracker = _ => {
    
   const setCardName = _ => { 
     const card = inView();
-    const playerName = card.querySelector('.scorecard__player');
+    const playerName = card.querySelector('.scorecard__player-field');
     
     playerName.addEventListener('change', _ => {
       const h5 = document.createElement('h5');
       const name = document.createTextNode(playerName.value);
+      h5.classList.add('scorecard__player');
       h5.appendChild(name);
 
       // Player name pops up on scorecard

@@ -418,9 +418,9 @@ main {
   display: inline-block;
   background-color: #fbfafc;
   border-radius: .975rem; }
-  .scorecard-inner {
-    display: flex;
-    justify-content: center; }
+  .scorecard__content {
+    padding-left: 4%;
+    padding-right: 4%; }
 
 .scorecard__header {
   margin-top: 8px;
@@ -442,12 +442,20 @@ main {
 .scorecard__divider {
   border: 0.05rem solid #8CF6AF; }
 
-.scorecard__player {
+.scorecard__player-field {
   margin: 2px auto 12px auto;
   padding: .6rem;
   outline-color: #F9F871;
   border: 1px solid #ccc;
   border-radius: 4px; }
+
+.scorecard__player {
+  margin: 1rem auto;
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  text-transform: capitalize;
+  color: #333; }
 
 .modal {
   position: fixed;

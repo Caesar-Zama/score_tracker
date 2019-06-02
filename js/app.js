@@ -1,7 +1,7 @@
 // It should be able to add a point to player card (x)
 // It should be able to add a new player card ()
 // It should be able to remove a player card ()
-// It should be able to subtract a score from player card ()
+// It should be able to subtract a score from player card (x)
 // It should be able to display player name on card (x)
 // It should be able to restart tracker ()
 // IT should be able to set a game score (x)
@@ -85,7 +85,6 @@ const scoreTracker = _ => {
     });
   }
 
-  // Add Point To Scorecard
   const add = () => {
     // Currently visible player card
     const playerCard = inView();
@@ -93,6 +92,14 @@ const scoreTracker = _ => {
     
     // Add point to current scorecard
     playerScore.textContent = Number(playerScore.textContent) + 1;
+  }
+
+  const subtract = () => {
+    const playerCard = inView();
+    const playerScore = playerCard.querySelector('.scorecard__score');
+
+    // Subtract point to current scorecard
+    playerScore.textContent = Number(playerScore.textContent) - 1;
   }
 
   // Identify and Apply proper animation for clicked nav button
@@ -105,8 +112,8 @@ const scoreTracker = _ => {
       adjustScore();
     } else if (navBtn === 'js-add') {
       add();
-    } else if (navBtn === 'js-reset') {
-      // subtract()
+    } else if (navBtn === 'js-subtract') {
+      subtract()
     } else { // 'refresh'
       // reset();
     }

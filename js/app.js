@@ -1,5 +1,5 @@
 // It should be able to add a point to player card (x)
-// It should be able to add a new player card ()
+// It should be able to add a new player card (x)
 // It should be able to remove a player card ()
 // It should be able to subtract a score from player card (x)
 // It should be able to display player name on card (x)
@@ -85,40 +85,6 @@ const scoreTracker = _ => {
     });
   }
 
-  const add = () => {
-    // Currently visible player card
-    const playerCard = inView();
-    const playerScore = playerCard.querySelector('.scorecard__score');
-    
-    // Add point to current scorecard
-    playerScore.textContent = Number(playerScore.textContent) + 1;
-  }
-
-  const subtract = () => {
-    const playerCard = inView();
-    const playerScore = playerCard.querySelector('.scorecard__score');
-
-    // Subtract point to current scorecard
-    playerScore.textContent = Number(playerScore.textContent) - 1;
-  }
-
-  // Identify and Apply proper animation for clicked nav button
-  const checkNavBtn = (event) => {
-    const navBtn = event.target.classList[0];
-    // Determine which nav button was clicked
-    if (navBtn === 'js-player-add') {
-      // newPlayer();
-    } else if (navBtn === 'js-slider') {
-      adjustScore();
-    } else if (navBtn === 'js-add') {
-      add();
-    } else if (navBtn === 'js-subtract') {
-      subtract()
-    } else { // 'refresh'
-      // reset();
-    }
-  }
-   
   const setCardName = _ => { 
     const card = inView();
     const playerName = card.querySelector('.scorecard__player-field');
@@ -135,6 +101,61 @@ const scoreTracker = _ => {
     });
   }
 
+  // Add point to current scorecard
+  const add = () => {
+    const playerCard = inView();
+    const playerScore = playerCard.querySelector('.scorecard__score');    
+    playerScore.textContent = Number(playerScore.textContent) + 1;
+  }
+
+  // Subtract point to current scorecard
+  const subtract = () => {
+    const playerCard = inView();
+    const playerScore = playerCard.querySelector('.scorecard__score');
+    playerScore.textContent = Number(playerScore.textContent) - 1;
+  }
+
+  // Builds a new scorecard
+  const newPlayer = () => {
+    const parent = document.querySelector('.scrolling--wrapper');
+    const scorecard = document.createElement('article');
+    const scorecardData = 
+    `<div class="scorecard__content">
+      <header class="scorecard__header">
+        <p class="scorecard__text">Winning Score</p>
+        <span class="scorecard__text">00</span>
+      </header>
+      <div class="scorecard__score-container">
+        <h4 class="scorecard__score">0</h4>
+      </div>
+      <footer>
+        <hr class="scorecard__divider"> 
+        <input class="scorecard__player-field" type="text" placeholder="Enter Player Name">
+      </footer>
+    </div>`;
+    scorecard.classList.add('scorecard');
+    scorecard.innerHTML = scorecardData;
+    parent.appendChild(scorecard);
+  }
+
+  // Identify and Apply proper animation for clicked nav button
+  const checkNavBtn = (event) => {
+    const navBtn = event.target.classList[0];
+    // Determine which nav button was clicked
+    if (navBtn === 'js-player-add') {
+      newPlayer();
+    } else if (navBtn === 'js-slider') {
+      adjustScore();
+    } else if (navBtn === 'js-add') {
+      add();
+    } else if (navBtn === 'js-subtract') {
+      subtract()
+    } else { // 'refresh'
+      // reset();
+    }
+  }
+   
+  
   setCardName();
   scrollStop(setCardName);
   nav.addEventListener('click', checkNavBtn);

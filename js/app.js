@@ -87,17 +87,17 @@ const scoreTracker = _ => {
 
   const setCardName = _ => { 
     const card = inView();
-    const playerName = card.querySelector('.scorecard__player-field');
+    const playerEntry = card.querySelector('.scorecard__player-field');
     
-    playerName.addEventListener('change', _ => {
-      const h5 = document.createElement('h5');
-      const name = document.createTextNode(playerName.value);
-      h5.classList.add('scorecard__player');
-      h5.appendChild(name);
+    playerEntry.addEventListener('change', _ => {
+      const playerName = document.createElement('h5');
+      const name = document.createTextNode(playerEntry.value);
+      playerName.classList.add('scorecard__player');
+      playerName.appendChild(name);
 
       // Player name pops up on scorecard
-      const parent = playerName.parentNode;
-      parent.replaceChild(h5, playerName);
+      const parent = playerEntry.parentNode;
+      parent.replaceChild(playerName, playerEntry);
     });
   }
 
@@ -138,6 +138,32 @@ const scoreTracker = _ => {
     parent.appendChild(scorecard);
   }
 
+  const resetTracker = () => {
+    const scorecards = document.querySelectorAll('.scorecard');
+    const playerNames = document.querySelectorAll('.scorecard__player');
+    
+    scorecards.forEach((scorecard, index) => {
+      // remove additional scorecards
+      if (index > 1) scorecard.parentNode.removeChild(scorecard);        
+      
+      // Set winning score & scorecard score back to 0
+      scorecard.querySelector('.scorecard__header span').textContent = '00';
+      scorecard.querySelector('.scorecard__score').textContent = 0;
+    });
+    
+    // Erase player name and bring back input field
+    playerNames.forEach(playerName => {
+      // Build up input field
+      const playerNameField = document.createElement('input');
+      playerNameField.classList.add('scorecard__player-field');
+      playerNameField.placeholder = 'Enter Player Name';
+      
+      // Reset back to input field
+      const parent = playerName.parentNode;
+      parent.replaceChild(playerNameField, playerName);
+    });    
+  }
+
   // Identify and Apply proper animation for clicked nav button
   const checkNavBtn = (event) => {
     const navBtn = event.target.classList[0];
@@ -150,8 +176,8 @@ const scoreTracker = _ => {
       add();
     } else if (navBtn === 'js-subtract') {
       subtract()
-    } else { // 'refresh'
-      // reset();
+    } else { 
+      resetTracker();
     }
   }
    

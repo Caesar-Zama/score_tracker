@@ -20,6 +20,10 @@
     bottom: -412px; }
   to {
     bottom: 0; } }
+.winner {
+  display: flex;
+  justify-content: center; }
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */

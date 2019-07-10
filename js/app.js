@@ -6,9 +6,44 @@
 // It should be able to restart tracker ()
 // IT should be able to set a game score (x)
 
+
 const scoreTracker = _ => {
   const nav = document.querySelector('.nav');
 
+  
+  const gameOver = () => {
+    const scoreToWin = document.querySelector('.scorecard__header span').textContent;
+    const playerScorecards = document.querySelectorAll('.scorecard');
+    const scorecardsParent = playerScorecards[0].parentNode;
+
+    // Insure scoreToWin is a valid number 
+    scoreToWin[0] === '0' ? winningScore = Number(scoreToWin[1]) : winningScore = Number(scoreToWin);
+  
+    // Delete losing cards from game
+    const removeLosingCard = playerScorecard => {
+      const playersScore = Number(playerScorecard.querySelector('.scorecard__score').textContent);
+      // Remove all losing cards
+      if (playersScore !== winningScore) {
+        playerScorecard.parentNode.removeChild(playerScorecard);
+      }
+    }
+
+    const winningCard = _ => {
+      
+
+      for (let i = 0; i < playerScorecards.length; i++) {
+        let playerCardScore = playerScorecards[i].querySelector('.scorecard__score').textContent;
+       // When there is a winning card, remove all losing cards
+        if (Number(playerCardScore) === winningScore) {
+          playerScorecards.forEach(removeLosingCard);
+          scorecardsParent.classList.add('winner');
+          break;
+        }
+      }
+    }    
+    winningCard();
+  }
+  
   // Determines which player card is entirely visible inside viewport
   const inView = () => {
     const scorecards = document.querySelectorAll('.scorecard');
@@ -25,7 +60,6 @@ const scoreTracker = _ => {
       }
     }
     scorecards.forEach(visibleCard);
-    
     return playerCard;
   }
 
@@ -45,7 +79,7 @@ const scoreTracker = _ => {
       // set a timeout to run after scroll event ends
       isScrolling = setTimeout(_ =>  {customFunc();}, 390);
     });
-  };
+  }
 
   // IT should be able to set a game score
   const adjustScore = () => {
@@ -77,7 +111,7 @@ const scoreTracker = _ => {
       // Update each player scorecard to new winning score
       scorecardWinningScore.forEach(scorecard => {
         if (Number(playingTo.textContent) < 10) {
-          scorecard.textContent =`0 ${playingTo.textContent}`;
+          scorecard.textContent =`0${playingTo.textContent}`;
         } else {
           scorecard.textContent = playingTo.textContent;
         }
@@ -86,10 +120,15 @@ const scoreTracker = _ => {
   }
 
   const setCardName = _ => { 
+    // debugger;
     const card = inView();
     const playerEntry = card.querySelector('.scorecard__player-field');
-    
-    playerEntry.addEventListener('change', _ => {
+
+    // When playerEntry element no longer exists, exit function
+    if (playerEntry === null) return;  
+       
+    // Displays name player enters into field
+    const cardName = _ => {
       const playerName = document.createElement('h5');
       const name = document.createTextNode(playerEntry.value);
       playerName.classList.add('scorecard__player');
@@ -97,8 +136,12 @@ const scoreTracker = _ => {
 
       // Player name pops up on scorecard
       const parent = playerEntry.parentNode;
-      parent.replaceChild(playerName, playerEntry);
-    });
+      parent.replaceChild(playerName, playerEntry); 
+    }
+    
+    playerEntry.addEventListener('change', cardName);
+    
+
   }
 
   // Add point to current scorecard
@@ -167,17 +210,24 @@ const scoreTracker = _ => {
   // Identify and Apply proper animation for clicked nav button
   const checkNavBtn = (event) => {
     const navBtn = event.target.classList[0];
+    
     // Determine which nav button was clicked
-    if (navBtn === 'js-player-add') {
-      newPlayer();
-    } else if (navBtn === 'js-slider') {
-      adjustScore();
-    } else if (navBtn === 'js-add') {
-      add();
-    } else if (navBtn === 'js-subtract') {
-      subtract()
-    } else { 
-      resetTracker();
+    switch (navBtn) {
+      case 'js-player-add':
+        newPlayer();
+        break;
+      case 'js-slider':
+        adjustScore();
+        break;
+      case 'js-add': 
+        add();
+        gameOver();
+        break;
+      case 'js-subtract': 
+        subtract();
+        break;
+      case 'js-reset':
+        resetTracker();
     }
   }
    

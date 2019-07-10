@@ -1,6 +1,6 @@
 // It should be able to add a point to player card (x)
 // It should be able to add a new player card (x)
-// It should be able to remove a player card ()
+// It should be able to remove losing player cards (x)
 // It should be able to subtract a score from player card (x)
 // It should be able to display player name on card (x)
 // It should be able to restart tracker ()
@@ -19,6 +19,17 @@ const scoreTracker = _ => {
     // Insure scoreToWin is a valid number 
     scoreToWin[0] === '0' ? winningScore = Number(scoreToWin[1]) : winningScore = Number(scoreToWin);
   
+    // Disable key nav buttons until user restarts tracker
+    const disableBtns =  _ => {
+      const navBtns = document.querySelector('.nav').children;
+      
+      for (let i = 0; i < navBtns.length; i++) {
+       if (navBtns[i].id !== 'reset') {
+         navBtns[i].style.pointerEvents = 'none';
+       }
+      }
+    }
+
     // Delete losing cards from game
     const removeLosingCard = playerScorecard => {
       const playersScore = Number(playerScorecard.querySelector('.scorecard__score').textContent);
@@ -29,14 +40,13 @@ const scoreTracker = _ => {
     }
 
     const winningCard = _ => {
-      
-
       for (let i = 0; i < playerScorecards.length; i++) {
         let playerCardScore = playerScorecards[i].querySelector('.scorecard__score').textContent;
        // When there is a winning card, remove all losing cards
         if (Number(playerCardScore) === winningScore) {
           playerScorecards.forEach(removeLosingCard);
           scorecardsParent.classList.add('winner');
+          disableBtns();
           break;
         }
       }

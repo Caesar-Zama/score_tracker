@@ -7,10 +7,16 @@
 // IT should be able to set a game score (x)
 
 
+// When a new player is added midgame the tracking session restarts
+// When the winning score is changed midgame the tracking session restarts
+
+
+
+
+
 const scoreTracker = _ => {
   const nav = document.querySelector('.nav');
 
-  
   const gameOver = () => {
     const scoreToWin = document.querySelector('.scorecard__header span').textContent;
     const playerScorecards = document.querySelectorAll('.scorecard');
@@ -24,19 +30,16 @@ const scoreTracker = _ => {
       const navBtns = document.querySelector('.nav').children;
       
       for (let i = 0; i < navBtns.length; i++) {
-       if (navBtns[i].id !== 'reset') {
-         navBtns[i].style.pointerEvents = 'none';
-       }
+       if (navBtns[i].id !== 'reset') navBtns[i].style.pointerEvents = 'none';
       }
     }
 
     // Delete losing cards from game
     const removeLosingCard = playerScorecard => {
       const playersScore = Number(playerScorecard.querySelector('.scorecard__score').textContent);
+      
       // Remove all losing cards
-      if (playersScore !== winningScore) {
-        playerScorecard.parentNode.removeChild(playerScorecard);
-      }
+      if (playersScore !== winningScore) playerScorecard.parentNode.removeChild(playerScorecard);
     }
 
     const winningCard = _ => {
@@ -150,8 +153,6 @@ const scoreTracker = _ => {
     }
     
     playerEntry.addEventListener('change', cardName);
-    
-
   }
 
   // Add point to current scorecard
@@ -170,6 +171,7 @@ const scoreTracker = _ => {
 
   // Builds a new scorecard
   const newPlayer = () => {
+    const playerNames = document.querySelectorAll('.scorecard__player');
     const parent = document.querySelector('.scrolling--wrapper');
     const scorecard = document.createElement('article');
     const scorecardData = 
@@ -189,11 +191,42 @@ const scoreTracker = _ => {
     scorecard.classList.add('scorecard');
     scorecard.innerHTML = scorecardData;
     parent.appendChild(scorecard);
+
+    // Reset each scorecard everytime new card is added
+    if (parent.children.length > 2) {
+      for (let i = 0; i < parent.children.length; i++) {
+        // Set winning score & scorecard score back to 0
+        parent.children[i].querySelector('.scorecard__header span').textContent = '00';
+        parent.children[i].querySelector('.scorecard__score').textContent = 0;
+      }
+
+      // Erase player name and bring back input field
+      playerNames.forEach(playerName => {
+        // Build up input field
+        const playerNameField = document.createElement('input');
+        playerNameField.classList.add('scorecard__player-field');
+        playerNameField.placeholder = 'Enter Player Name';
+        
+        // Reset back to input field
+        const parent = playerName.parentNode;
+        parent.replaceChild(playerNameField, playerName);
+      });
+    }
+    
   }
 
   const resetTracker = () => {
     const scorecards = document.querySelectorAll('.scorecard');
     const playerNames = document.querySelectorAll('.scorecard__player');
+    const navBtns = document.querySelector('.nav').children;
+    const rangeSlider = document.querySelector('.slider');
+    const playingTo = document.querySelector('.score');
+
+    // Reset back to default card setup
+    if (scorecards.length === 1) {
+      scorecards[0].parentNode.classList.remove('winner');
+      newPlayer();
+    }
     
     scorecards.forEach((scorecard, index) => {
       // remove additional scorecards
@@ -214,7 +247,18 @@ const scoreTracker = _ => {
       // Reset back to input field
       const parent = playerName.parentNode;
       parent.replaceChild(playerNameField, playerName);
-    });    
+    });
+    
+    // Make nav btns clickable again
+    for (let i = 0; i < navBtns.length; i++) {
+      navBtns[i].style.pointerEvents = 'auto';
+    }
+
+    // Reset Range Slider back to default values
+    rangeSlider.value = 1;
+    playingTo.textContent = "";
+
+    setCardName();
   }
 
   // Identify and Apply proper animation for clicked nav button
